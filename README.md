@@ -1,4 +1,4 @@
-# Feigenbaum constant calculation reveal a FP bug
+# Feigenbaum constant calculation reveals a F.P. bug
 
 This task was added to RosettaCode
 (http://rosettacode.org/wiki/Feigenbaum_constant_calculation) recently, and
@@ -7,44 +7,47 @@ while the code itself is pretty mundane, it revealed a floating point bug.
 ## The Bug
 
 The bug is this: for certain floating point values results from 'X × X'
-differ from 'X²'. More generally, the underlying 'power' operation differs
-from repeated multiplication. This does not jibe with what I learned in middle school...
+differ from 'X²'. More generally, the answers from the underlying 'power'
+operation can differ from repeated multiplication. This does not jibe with
+what I learned in middle school...
 
-I think that the source of the problem is the system math library.
+Since the Feigenbaum constant calculation is iterative, errors accumulate and 
+the results diverge.
 
-## The Evidence
+## Bug Hunt
 
-The bug is present in code of these languages:
+The bug is present in all these languages:
 
 * C
 * Perl 
 * Perl6 (MoarVM)
 * Python
 
-But the bug is not present in:
+But not in these:
 
-* FORTRAN 
-* Perl (with Math-GSL)
+* Fortran 
+* Java
 * Perl6 (JVM)
+* Perl (with Math-GSL)
 
-The difference is that the languages in the first group all use the system
-math libraries (correct me if I'm wrong), while those in the second do not.
+What's the difference? It seems like the languages in the first group use
+the libc/glibc system/math libraries, while those in the second roll their
+own (correct me if I'm wrong).
 
-## Programs
-
-Files in this repository are my explorations to reveal the extent of the problem.
-Run them on your favorite platform and see what you get.
+Files in this repository are my attempt to reveal the extent of the
+problem.  Run them on your favorite OS and see what you get.
 
 ## Scope
 
-I found the bug to be present in recent versions of Mac OS X, from at least
-El Capitan onwards, but I don't have access to a wide variety of other OS
-versions.  It is still there is the latest OS.  I did **not** find it in
-any Linux, nor in Perl in Cygwin/Windows 7.
+I found the bug to be present in recent versions of OS X, from at least El
+Capitan (10.11) onwards, and it is still there is the latest release.  Snow
+Leopard (10.6.8) pre-dates the bug.
 
-## The Answer is...
+I did **not** find it in Linux, nor in Perl/Cygwin (for Windows 7).
 
-The actual Feigenbaum constant calculation (as per https://oeis.org/A006890) is:
+## The Actual Answer is...
+
+The actual Feigenbaum constant calculation (as per https://oeis.org/A006890) starts off:
 
 δ = 4.6692016091029906 
 
