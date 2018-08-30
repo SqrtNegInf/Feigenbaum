@@ -34,6 +34,11 @@ What's the difference? It seems like the languages in the first group use
 the libc/glibc system/math libraries, while those in the second roll their
 own (correct me if I'm wrong).
 
+But then it's hard to explain the Sidef results:
+
+* not buggy, despite being built on top of Perl
+* converges more closely to the OEIS limit value than any other code
+
 Files in this repository are my attempt to reveal the extent of the
 problem.  Run them on your favorite OS and see what you get.
 
