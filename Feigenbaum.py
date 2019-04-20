@@ -1,4 +1,6 @@
 #!/usr/bin/env python 
+# this solution not on rosettacode -- see a nicer version here:
+# http://rosettacode.org/wiki/Feigenbaum_constant_calculation#Python
 
 a1 = 1.0
 a2 = 0.0
