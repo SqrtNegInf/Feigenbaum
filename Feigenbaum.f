@@ -1,5 +1,6 @@
 !
 ! answer does not change, x*x vs x²
+! on rosettacode: http://rosettacode.org/wiki/Feigenbaum_constant_calculation#Fortran
 !
       program feigenbaum
       implicit none
