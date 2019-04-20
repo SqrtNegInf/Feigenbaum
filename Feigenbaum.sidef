@@ -1,6 +1,11 @@
 #!/usr/local/bin/sidef
 # answer does not change, x*x vs x²
 # closer to the OEIS value (https://oeis.org/A006890) despite using same math libraries as Perl?
+# Trizen explains:
+#   Sidef's numerical system is pretty much identical with Math::AnyNum, using Math::MPFR for floating-point operations 
+#   (see also: GNU MPFR library), with a default precision of 192 bits.
+# What follows is his version from rosettacode:
+#   http://rosettacode.org/wiki/Feigenbaum_constant_calculation#Sidef
 
 var a1 = 1
 var a2 = 0
