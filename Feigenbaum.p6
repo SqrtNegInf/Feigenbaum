@@ -23,8 +23,8 @@ for 2 .. $max-i -> $i {
         (my $x, my $y) = 0, 0;
         for 1 .. 2**$i {
             $y = 1 - 2 × $y × $x;
-            $x = $a - $x²; # 'pow' differs from 'mult'?
-            #$x = $a - $x × $x;
+            #$x = $a - $x²; # 'pow' differs from 'mult'?
+            $x = $a - $x × $x;
         }
         $a -= $x ÷ $y;
      }
@@ -33,7 +33,6 @@ for 2 .. $max-i -> $i {
      $a2 = $a1;
      $a1 = $a;
      @res.push: $i.fmt("%2d") ~ $δ1.fmt("%12.8f");
-     #say $i.fmt("%2d") ~ $δ1.fmt("%12.8f");
 }
 
 .say for @res;

@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#!/usr/local/bin/perl
 ## GSL version: substituting another math library, never seen to fail
 #  David H.  2018-05-07
 

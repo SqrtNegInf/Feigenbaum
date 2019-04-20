@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#!/usr/local/bin/perl
 ## ## 'x' squared not equal to 'x' times 'x'
 
 my $x=.05;
