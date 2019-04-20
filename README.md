@@ -57,7 +57,9 @@ The actual Feigenbaum constant calculation (as per https://oeis.org/A006890) sta
 δ = 4.6692016091029906 
 
 FORTRAN and Sidef both give 4.6692016062 after 15 iterations, the closest approximation. 
-Additionally, futher iterations remain near this value, but other programs seem xxx
+Additionally, futher iterations remain near this value, but other programs seem to mostly
+diverge, if iterations are continued.  Turns out, stopping at 15 is a sweet spot before 
+the values being moving farther away from the true answer.
 
 ## Moral of the Story
 
